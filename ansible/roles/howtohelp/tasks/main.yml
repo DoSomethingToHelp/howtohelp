@@ -23,6 +23,9 @@
     - python
     - g++
     - make
+    - postgresql
+    - libpq-dev
+    - python-psycopg2
 
 - git: repo=https://github.com/DoSomethingToHelp/howtohelp.git
    dest={{ ansible_app_path }}/howtohelp/
@@ -34,18 +37,41 @@
   with_items:
     - n
 
-- git: repo=https://github.com/DoSomethingToHelp/howtohelp.git
-   dest=/vagrant/
-   accept_hostkey=true
+- name: install node
+  command: n latest
   become: true
+
+- npm: path={{ ansible_app_path }}/howtohelp/
+
+- postgresql_db: name=howtohelp_webapp_dev
+  become: true
+  become_user: postgres
+
+- postgresql_db: name=howtohelp_webapp_test
+  become: true
+  become_user: postgres
+
+- postgresql_user: db=howtohelp_webapp_dev name=howtohelp password=howtohelp priv=ALL
+  become: true
+  become_user: postgres
+
+- postgresql_user: db=howtohelp_webapp_test name=howtohelp password=howtohelp priv=ALL
+  become: true
+  become_user: postgres
 
 - name: install hex
-  command: mix local.hex
+  command: mix local.hex --force
   args:
-    creates: /home/vagrant/.mix/archives/hex-0.12.1
+    chdir: /home/{{ ansible_ssh_user }}/howtohelp
+    creates: /home/{{ ansible_ssh_user }}/.mix/archives/hex-0.12.1
 
-- name: install pheonix
-  command: mix archive.install https://github.com/phoenixframework/archives/raw/master/phoenix_new.ez
-  become: true
+- name: install phoenix
+  command: mix archive.install https://github.com/phoenixframework/archives/raw/master/phoenix_new.ez --force
   args:
-    creates: /home/vagrant/.mix/archives/phoenix_new
+    chdir: /home/{{ ansible_ssh_user }}/howtohelp
+    creates: /home/{{ ansible_ssh_user }}/.mix/archives/phoenix_new
+
+- name: fetch phoenix deps
+  shell: mix deps.get --force
+  args:
+    chdir: /home/{{ ansible_ssh_user }}/howtohelp
