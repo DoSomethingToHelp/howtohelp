@@ -1,0 +1,47 @@
+---
+- name: add erlang
+  apt: deb=https://packages.erlang-solutions.com/erlang-solutions_1.0_all.deb
+  become: true
+
+- name: update apt-get
+  apt: update_cache=yes
+  become: true
+
+- name: install required apt-get packages
+  apt: name={{ item }} state=present force=yes
+  become: true
+  with_items:
+    - curl
+    - git
+    - esl-erlang
+    - elixir
+    - npm
+    - nodejs
+    - nodejs-legacy
+    - inotify-tools
+    - python-software-properties
+    - python
+    - g++
+    - make
+
+- name: install npm packages
+  npm: name={{ item }} global=yes state=present
+  become: true
+  with_items:
+    - n
+
+- git: repo=https://github.com/DoSomethingToHelp/howtohelp.git
+   dest=/vagrant/
+   accept_hostkey=true
+  become: true
+
+- name: install hex
+  command: mix local.hex
+  args:
+    creates: /home/vagrant/.mix/archives/hex-0.12.1
+
+- name: install pheonix
+  command: mix archive.install https://github.com/phoenixframework/archives/raw/master/phoenix_new.ez
+  become: true
+  args:
+    creates: /home/vagrant/.mix/archives/phoenix_new
