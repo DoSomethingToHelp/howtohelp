@@ -23,7 +23,10 @@ Vagrant.configure(2) do |config|
   end
 
   config.vm.provision :ansible do |ansible|
-    ansible.playbook = "./ansible/vagrant.yml"
+    ansible.playbook = './ansible/vagrant.yml'
+    ansible.extra_vars = {
+      ansible_app_path: '/home/vagrant/'
+    }
   end
   # Disable automatic box update checking. If you disable this, then
   # boxes will only be checked for updates when the user runs

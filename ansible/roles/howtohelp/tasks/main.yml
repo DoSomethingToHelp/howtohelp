@@ -24,6 +24,10 @@
     - g++
     - make
 
+- git: repo=https://github.com/DoSomethingToHelp/howtohelp.git
+   dest={{ ansible_app_path }}/howtohelp/
+   accept_hostkey=true
+
 - name: install npm packages
   npm: name={{ item }} global=yes state=present
   become: true
