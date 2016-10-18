@@ -1,1 +1,48 @@
 /* This file is for your main application css. */
+
+.orbit-container.searchbar {
+  height: 300px;
+}
+
+.search-container-outter {
+  position: absolute;
+  left: 50%;
+  top: 20%;
+  z-index: 10;
+}
+
+.search-container-inner {
+  position: relative;
+  left: -50%;
+  top: -50%;
+  background: rgba(0, 0, 0, 0.6);
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  font-family: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;
+}
+
+.big-question {
+  font-size: 40px;
+  color: #fff;
+  margin-left: 13px;
+}
+
+.search {
+  position: relative;
+  margin-bottom: 0;
+}
+
+.search i {
+  position: absolute;
+  margin-left: 207px;
+  font-size: 30px;
+  line-height: 50px;
+  color: #ccc;
+}
+
+.search .search-field {
+  height: 90px;
+  width: 900px;
+  font-size: 50px;
+}

@@ -1,0 +1,13 @@
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link type="image/x-icon" rel="shortcut icon" href="<%= static_path(@conn, "/images/favicon.ico") %>" />
+  <link type="image/png" rel="shortcut icon" href="<%= static_path(@conn, "/images/favicon.png") %>" />
+
+  <title>Do something to help</title>
+  <link rel="stylesheet" href="<%= static_path(@conn, "/css/vendor.css") %>">
+  <link rel="stylesheet" href="<%= static_path(@conn, "/css/app.css") %>">
+</head>

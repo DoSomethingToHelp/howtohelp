@@ -1,0 +1,39 @@
+<div class="orbit" role="region" aria-label="Favorite Space Pictures" data-orbit>
+  <div class="search-container-outter">
+    <div class="search-container-inner">
+      <span class="big-question">Who or what would you like to help: </span>
+
+      <div class="row search">
+        <div class=" small-12 columns">
+          <div class="row collapse">
+            <!-- Search field -->
+            <div class="small-12 large-12  columns ">
+              <i class="fi-magnifying-glass"></i>
+              <input type="text" class="search-field" placeholder="Global warming, Aboriginal Youth">
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <ul class="orbit-container searchbar">
+    <button class="orbit-previous" aria-label="previous"><span class="show-for-sr">Previous Slide</span>&#9664;</button>
+    <button class="orbit-next" aria-label="next"><span class="show-for-sr">Next Slide</span>&#9654;</button>
+    <li class="orbit-slide is-active">
+      <img src="<%= static_path(@conn, "/images/banner-01.jpg") %>">
+    </li>
+    <li class="orbit-slide">
+      <img src="<%= static_path(@conn, "/images/banner-02.jpg") %>">
+    </li>
+    <li class="orbit-slide">
+      <img src="<%= static_path(@conn, "/images/banner-03.jpg") %>">
+    </li>
+    <li class="orbit-slide">
+      <img src="<%= static_path(@conn, "/images/banner-04.jpg") %>">
+    </li>
+    <li class="orbit-slide">
+      <img src="<%= static_path(@conn, "/images/banner-05.jpg") %>">
+    </li>
+  </ul>
+</div>

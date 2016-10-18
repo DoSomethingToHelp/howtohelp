@@ -1,0 +1,7 @@
+<div class="top-bar">
+  <div class="top-bar-right">
+    <ul class="menu">
+      <li><a href="#">Login</a></li>
+    </ul>
+  </div>
+</div>
