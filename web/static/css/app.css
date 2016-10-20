@@ -8,6 +8,7 @@
   left: 50%;
   top: 20%;
   z-index: 10;
+  color: #fff;
 }
 
 .search-container-inner {
@@ -23,8 +24,11 @@
 
 .big-question {
   font-size: 40px;
-  color: #fff;
   margin-left: 13px;
+}
+
+.suggestions {
+  font-size: 20px;
 }
 
 .search {
@@ -32,16 +36,17 @@
   margin-bottom: 0;
 }
 
-.search i {
-  position: absolute;
-  margin-left: 207px;
-  font-size: 30px;
-  line-height: 50px;
-  color: #ccc;
-}
-
 .search .search-field {
   height: 90px;
   width: 900px;
   font-size: 50px;
+  margin-bottom: 0;
+}
+
+.top-bar {
+  background-color: #000;
+}
+
+.top-bar .menu {
+  background-color: #000;
 }
