@@ -1,0 +1,5 @@
+<%= for q <- @results do %>
+  <div>
+    <%= q %>
+  </div>
+<% end %>
