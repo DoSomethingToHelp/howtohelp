@@ -4,6 +4,9 @@
   roles:
     - role: ansible-nvim
     - role: ansible-brianp
+    - role: ansible-elasticsearch
+      es_instance_name: "node1"
+      become: true
     - role: howtohelp
 
   tasks:
