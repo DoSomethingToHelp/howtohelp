@@ -9,7 +9,8 @@
             <!-- Search field -->
             <div class="small-12 large-12  columns ">
               <i class="fi-magnifying-glass"></i>
-              <input type="text" class="search-field" placeholder="Global warming, Aboriginal Youth">
+              <input type="text" class="search-field" placeholder="Global warming, Youth initiatives">
+              <span class="suggestions"><strong>Suggestions:</strong> Local politics, Sexual assault survivors, Wildlife preservation, Homelessness</span>
             </div>
           </div>
         </div>
