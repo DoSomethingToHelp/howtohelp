@@ -11,7 +11,7 @@ config :howtohelp,
 
 # Configures the endpoint
 config :howtohelp, Howtohelp.Endpoint,
-  url: [host: "localhost"],
+  url: [host: System.get_env("APP_HOSTNAME")],
   secret_key_base: "h/Prd2JqV0nTxCF66z2tUiCnQwKYRvDmYTgYOjcpDEpyVXGSaOfl2u22SoF0dBNS",
   render_errors: [view: Howtohelp.ErrorView, accepts: ~w(html json)],
   pubsub: [name: Howtohelp.PubSub,
